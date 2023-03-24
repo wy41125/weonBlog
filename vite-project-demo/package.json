@@ -11,7 +11,11 @@
   "dependencies": {
     "@antv/x6": "^2.5.5",
     "@antv/x6-vue-shape": "^2.0.10",
-    "vue": "^3.2.45"
+    "ant-design-vue": "^3.2.16",
+    "less": "^4.1.3",
+    "less-loader": "^11.1.0",
+    "vue": "^3.2.45",
+    "worker-loader": "^3.0.8"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

@@ -1,28 +1,21 @@
 <template>
     <div class="node-box">
-        <img class="img" :src="icon" alt="" />
-        <span class="label">{{ node.data.func_name }}</span>
-
-        <div class="hover-box">
-            <div class="box-info">
-                <p class="title">{{ node.data.func_name }}</p>
-                <p class="data-line"> <span>代码位置：</span> 代码位置123行</p>
-                <p class="data-line"> <span>函数复杂度：</span> 123</p>
-                <p class="data-line"> <span>缺陷数：</span> 65</p>
-                <p class="data-line"> <span>测试次数：</span> 87</p>
-                <a-button class="button"> 新建测试</a-button>
-            </div>
-            
-        </div>
+        <!-- <svg-icon type="function_icon" size="16" class="node-icon"/> -->
+        <span class="label" :style="isCheck ? 'border-color: #298CFF;color: #298CFF；background-color: #132642' : ''">{{ node.data.name }}</span>
     </div>
 </template>
 <script setup>
-import { inject } from 'vue';
-const icon = require('@/assets/Function.png')
+import { inject, ref } from 'vue';
+// import SvgIcon from '@/components/fuzzing/Icon.vue'
 const getNode = inject('getNode')
-
 const node = getNode()
-console.log('++++++++++++++++++', node)
+
+let isCheck = ref(node.data.isCheck)
+// 监听数据更新
+node.on("change:data", ({ current }) => {
+    isCheck.value = current.isCheck
+})
+
 </script>
 <style lang="less" scoped>
 .node-box{
@@ -30,25 +23,30 @@ console.log('++++++++++++++++++', node)
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: #fff;
-    border: 1px solid #c2c8d5;
-    border-left: 4px solid #5F95FF;
+    background-color: #22273b;
     position: relative;
-    .img{
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        margin-left: 8px;
+    &.isCheck{
+        color: red;
     }
+    // .node-icon{
+    //     color: #515151;
+    //     flex-shrink: 0;
+    //     margin-left: 8px;
+    // }
     .label{
+        width: 100%;
+        height: 100%;
+        line-height: 38px;
         display: inline-block;
+        text-align: center;
         flex-shrink: 0;
-        width: 128px;
+        border: 1px solid #788096;
+        border-radius: 100%;
         overflow: hidden;
         white-space:nowrap;
         text-overflow:ellipsis;
-        margin-left: 8px;
-        color: #666;
+        // margin-left: 8px;
+        color: #788096;
         font-size: 12px;
     }
     &:hover{
@@ -61,12 +59,14 @@ console.log('++++++++++++++++++', node)
         top: 36px;
         padding-top: 14px;
         left: 0;
+        z-index: 100000;
         display: none;
         .box-info{
             position: relative;
             background-color: #25253a;
             padding: 8px 14px;
             border-radius: 4px;
+            max-width: 400px;
             &::after{
                 content: "";
                 position: absolute;
