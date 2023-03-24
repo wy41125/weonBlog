@@ -23,7 +23,7 @@ import { onMounted, ref } from 'vue'
 import { Graph } from '@antv/x6'
 import { register } from '@antv/x6-vue-shape'
 import FuncNode from './funcNode.vue'
-import Worker from 'worker-loader!./worker'
+import Worker from './worker.js?worker'
 import { graphData } from './graphData'
 const worker = ref()
 

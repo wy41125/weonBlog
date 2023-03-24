@@ -6,6 +6,12 @@
 
     ```
         /*
+        * 使用worker 进行数据处理，数据提供文件graphData.js
+        */
+    ```
+    ```
+        /*
+        * @ -> graph.vue
         * 使用@antv/x6-vue-shape 的register 自定义创建节点
         * 其后在使用shape指定使用哪个节点类型“shape: 'custom-vue-node'”
         */ 

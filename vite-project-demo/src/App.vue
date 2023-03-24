@@ -8,7 +8,7 @@ import Graph from './components/graph.vue'
 </script>
 <style lang="less" scoped>
 .chart-page {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 </style>
