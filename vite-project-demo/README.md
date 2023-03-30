@@ -1,28 +1,10 @@
 # Vue 3 + Vite
-当前项目是由 Vue 3 + Vite搭建的项目，该项目全为公司项目中遇到的第三方插件试用、预研的demo
+当前项目是由 Vue 3 + Vite搭建的项目，该项目全为公司项目中遇到的第三方插件试用、预研的demo、记录自己遇到过的技术
 
-## @antv/x6
-使用@antv/x6结合@antv/x6-vue-shape插件自定义节点，实现一个项目代码中所有函数相互调用的关系图
+@[记录@antv-x6插件的自定义节点使用方案](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/@antv-x6.md)
 
-```
-    /*
-    * 使用worker 进行数据处理，数据提供文件graphData.js
-    */
-```
-```
-    /*
-    * @ -> graph.vue
-    * 使用@antv/x6-vue-shape 的register 自定义创建节点
-    * 其后在使用shape指定使用哪个节点类型“shape: 'custom-vue-node'”
-    */ 
-    register({
-        shape: 'custom-vue-node',
-        width: 180,
-        height: 38,
-        component: FuncNode,
-    })
-```
+@[针对两种情形的流内容处理记录](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/DocstreamDownload.md)
 
-## [针对两种情形的流内容处理记录](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/DocstreamDownload.md)
+@[前端多端开发框架对比](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/FrameworkComparison.md)
 
-## [前端多端开发框架对比](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/FrameworkComparison.md)
+@[前端技术开发规范](https://github.com/wy41125/weonBlog/blob/master/vite-project-demo/DevelopmentSpecification.md)
