@@ -4,7 +4,7 @@
     </div>
 </template>
 <script setup>
-import Graph from './components/graph.vue'
+import Graph from './components/graph/graph.vue'
 </script>
 <style lang="less" scoped>
 .chart-page {

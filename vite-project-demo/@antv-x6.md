@@ -1,6 +1,6 @@
 ## @antv/x6
 使用@antv/x6结合@antv/x6-vue-shape插件自定义节点，实现一个项目代码中所有函数相互调用的关系图
-
+详细代码可查看'@/src/components/graph.vue'
 ```
 /*
 * 使用worker 进行数据处理，数据提供文件graphData.js
